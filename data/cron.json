@@ -1,6 +1,6 @@
 {
-  "updatedAt": 1779084344853,
-  "updatedAtISO": "2026-05-18T06:05:44.853Z",
+  "updatedAt": 1779087860902,
+  "updatedAtISO": "2026-05-18T07:04:20.902Z",
   "jobs": [
     {
       "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
@@ -13,13 +13,13 @@
         "staggerMs": 300000
       },
       "state": {
-        "lastRunAtMs": 1779080641472,
+        "lastRunAtMs": 1779084325964,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22431,
+        "lastDurationMs": 23004,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779084241463
+        "nextRunAtMs": 1779087841463
       }
     },
     {
@@ -32,13 +32,14 @@
         "anchorMs": 1778571094335
       },
       "state": {
-        "lastRunAtMs": 1779083348880,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 77691,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1779084908880
+        "lastRunAtMs": 1779086468895,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120164,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1779088028895,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -47,17 +48,17 @@
       "enabled": true,
       "schedule": {
         "kind": "every",
-        "everyMs": 1620000,
-        "anchorMs": 1779078643489
+        "everyMs": 1440000,
+        "anchorMs": 1779086577570
       },
       "state": {
-        "lastRunAtMs": 1779084125950,
+        "lastRunAtMs": 1779087185967,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 197962,
+        "lastDurationMs": 132725,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779085745950
+        "nextRunAtMs": 1779088625967
       }
     },
     {
