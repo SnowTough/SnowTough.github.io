@@ -1,6 +1,6 @@
 {
-  "updatedAt": 1779087860902,
-  "updatedAtISO": "2026-05-18T07:04:20.902Z",
+  "updatedAt": 1779091461756,
+  "updatedAtISO": "2026-05-18T08:04:21.756Z",
   "jobs": [
     {
       "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
@@ -13,33 +13,13 @@
         "staggerMs": 300000
       },
       "state": {
-        "lastRunAtMs": 1779084325964,
+        "lastRunAtMs": 1779087841470,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23004,
+        "lastDurationMs": 23365,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779087841463
-      }
-    },
-    {
-      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
-      "name": "系统健康巡检",
-      "enabled": true,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 1560000,
-        "anchorMs": 1778571094335
-      },
-      "state": {
-        "lastRunAtMs": 1779086468895,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 120164,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1779088028895,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1779091441463
       }
     },
     {
@@ -52,13 +32,32 @@
         "anchorMs": 1779086577570
       },
       "state": {
-        "lastRunAtMs": 1779087185967,
+        "lastRunAtMs": 1779090065986,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 132725,
+        "lastDurationMs": 220058,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779088625967
+        "nextRunAtMs": 1779091505986
+      }
+    },
+    {
+      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
+      "name": "系统健康巡检",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1560000,
+        "anchorMs": 1778571094335
+      },
+      "state": {
+        "lastRunAtMs": 1779091155784,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 102854,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1779092715784
       }
     },
     {
@@ -71,13 +70,13 @@
         "anchorMs": 1779072411664
       },
       "state": {
-        "lastRunAtMs": 1779083241500,
+        "lastRunAtMs": 1779088700502,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 105366,
+        "lastDurationMs": 111005,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779088641500
+        "nextRunAtMs": 1779094100502
       }
     },
     {
