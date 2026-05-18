@@ -105,7 +105,7 @@
             transition: opacity 0.3s ease;
         }
 
-        /* 动态光泽层 - 模拟真实玻璃折射与高光，带柔和暖白色调 */
+        /* 动态光泽层 - 模拟真实玻璃折射与高光，带柔和暖白色调，层次更丰富 */
         .card::after {
             content: '';
             position: absolute;
@@ -114,16 +114,22 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(180deg, rgba(255,255,255,0.28) 0%, transparent 32%),
-                linear-gradient(155deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.10) 26%, transparent 40%),
-                linear-gradient(215deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.06) 20%, transparent 36%),
-                radial-gradient(ellipse 100% 48% at 50% -2%, rgba(245,245,250,0.20) 0%, transparent 50%);
+                /* 顶部强光源 - 最亮的第一层高光 */
+                linear-gradient(180deg, rgba(255,255,255,0.32) 0%, transparent 24%),
+                /* 中部偏上柔和渐变 - 第二层光泽 */
+                linear-gradient(165deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 16%, transparent 32%),
+                /* 侧向暖色光泽 - 增加色彩层次 */
+                linear-gradient(145deg, rgba(255,248,240,0.12) 0%, transparent 20%),
+                /* 底部微弱反射 - 真实玻璃的底部散射 */
+                linear-gradient(200deg, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* 顶部椭圆光源 - 模拟顶部强光源聚焦 */
+                radial-gradient(ellipse 120% 56% at 50% -4%, rgba(250,250,252,0.24) 0%, transparent 50%);
             background-size: 200% 200%;
             background-position: 0% 50%;
             pointer-events: none;
             border-radius: 16px;
-            opacity: 0.34;
-            animation: shimmer 14s ease-in-out infinite;
+            opacity: 0.36;
+            animation: shimmer 15s ease-in-out infinite;
             box-shadow: 
                 inset 0 0 50px rgba(255, 255, 255, 0.03),
                 inset 0 -15px 30px -10px rgba(255, 255, 255, 0.015),
@@ -404,14 +410,20 @@
 
         body.dark .card::after {
             background: 
-                linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 28%),
-                linear-gradient(155deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.035) 24%, transparent 36%),
-                linear-gradient(215deg, rgba(255,255,255,0.06) 0%, transparent 28%),
-                radial-gradient(ellipse 100% 42% at 50% -6%, rgba(180,190,220,0.10) 0%, transparent 50%) !important;
+                /* 顶部强光源 - 深色模式下更微妙 */
+                linear-gradient(180deg, rgba(255,255,255,0.14) 0%, transparent 22%),
+                /* 中部偏上柔和渐变 */
+                linear-gradient(165deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 14%, transparent 28%),
+                /* 侧向微蓝光泽 - 深色模式下的冷色调点缀 */
+                linear-gradient(145deg, rgba(200,210,240,0.06) 0%, transparent 18%),
+                /* 底部微弱反射 */
+                linear-gradient(200deg, rgba(255,255,255,0.03) 0%, transparent 16%),
+                /* 顶部椭圆光源 - 深色模式更微妙 */
+                radial-gradient(ellipse 120% 48% at 50% -6%, rgba(180,190,220,0.12) 0%, transparent 50%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
-            animation: shimmer 13s ease-in-out infinite !important;
-            opacity: 0.38 !important;
+            animation: shimmer 14s ease-in-out infinite !important;
+            opacity: 0.40 !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
