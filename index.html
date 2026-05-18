@@ -78,7 +78,7 @@
             filter: url(#glass-edge);
         }
 
-        /* 多层边缘光泽 - 模拟液态玻璃折射效果 */
+        /* 多层边缘光泽 - 模拟液态玻璃折射效果 + 顶部光源高光 */
         .card::before {
             content: '';
             position: absolute;
@@ -86,21 +86,22 @@
             border-radius: 16px;
             padding: 1px;
             background: linear-gradient(
-                155deg,
-                rgba(255, 255, 255, 0.45) 0%,
-                rgba(255, 255, 255, 0.22) 16%,
-                rgba(255, 255, 255, 0.08) 32%,
-                transparent 48%,
-                transparent 55%,
-                rgba(255, 255, 255, 0.06) 70%,
-                rgba(255, 255, 255, 0.14) 85%,
-                rgba(255, 255, 255, 0.32) 100%
+                165deg,
+                rgba(255, 255, 255, 0.52) 0%,
+                rgba(255, 255, 255, 0.28) 12%,
+                rgba(255, 255, 255, 0.14) 24%,
+                rgba(255, 255, 255, 0.06) 36%,
+                transparent 50%,
+                transparent 58%,
+                rgba(255, 255, 255, 0.04) 72%,
+                rgba(255, 255, 255, 0.1) 86%,
+                rgba(255, 255, 255, 0.28) 100%
             );
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
-            opacity: 0.48;
+            opacity: 0.44;
             transition: opacity 0.3s ease;
         }
 
