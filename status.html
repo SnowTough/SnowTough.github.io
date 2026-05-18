@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron 任务状态</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f7fafc;
+    }
+    h1 { color: #2d3748; }
+    .summary {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-card .num { font-size: 2em; font-weight: bold; }
+    .summary-card .label { color: #718096; font-size: 0.9em; }
+    .ok .num { color: #38a169; }
+    .error .num { color: #e53e3e; }
+    table {
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #edf2f7;
+    }
+    th { background: #edf2f7; font-weight: 600; color: #4a5568; }
+    .status-ok { background: #f0fff4; }
+    .status-error { background: #fff5f5; }
+    .updated { color: #718096; font-size: 0.9em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>🤖 Cron 任务状态</h1>
+  
+  <div class="summary">
+    <div class="summary-card ok">
+      <div class="num">5</div>
+      <div class="label">正常运行</div>
+    </div>
+    <div class="summary-card error">
+      <div class="num">6</div>
+      <div class="label">错误</div>
+    </div>
+    <div class="summary-card">
+      <div class="num">7/11</div>
+      <div class="label">已启用</div>
+    </div>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>任务名称</th>
+        <th>状态</th>
+        <th>上次运行</th>
+        <th>耗时</th>
+        <th>下次运行</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    <tr class="status-ok">
+      <td>status-page-sync</td>
+      <td>✅ 正常</td>
+      <td>2026/5/18 15:04:01</td>
+      <td>23s</td>
+      <td>2026/5/18 16:04:01</td>
+    </tr>
+    <tr class="status-ok">
+      <td>简报页面自进化</td>
+      <td>✅ 正常</td>
+      <td>2026/5/18 15:41:05</td>
+      <td>220s</td>
+      <td>2026/5/18 16:05:05</td>
+    </tr>
+    <tr class="status-ok">
+      <td>系统健康巡检</td>
+      <td>✅ 正常</td>
+      <td>2026/5/18 15:59:15</td>
+      <td>103s</td>
+      <td>2026/5/18 16:25:15</td>
+    </tr>
+    <tr class="status-ok">
+      <td>B站探索</td>
+      <td>✅ 正常</td>
+      <td>2026/5/18 15:18:20</td>
+      <td>111s</td>
+      <td>2026/5/18 16:48:20</td>
+    </tr>
+    <tr class="status-ok">
+      <td>B站日报</td>
+      <td>✅ 正常</td>
+      <td>2026/5/18 10:42:53</td>
+      <td>25s</td>
+      <td>2026/5/18 19:30:00</td>
+    </tr>
+    <tr class="status-error">
+      <td>Memory Dreaming Promotion</td>
+      <td>❌ 错误</td>
+      <td>2026/5/18 06:06:12</td>
+      <td>7153s</td>
+      <td>2026/5/19 03:00:00<br><small style="color:#e53e3e">cron: job execution timed out</small></td>
+    </tr>
+    <tr class="status-error">
+      <td>weather-rain-alert</td>
+      <td>❌ 错误</td>
+      <td>2026/5/17 11:17:28</td>
+      <td>1680s</td>
+      <td>2026/5/19 07:30:00<br><small style="color:#e53e3e">cron: job execution timed out</small></td>
+    </tr>
+    <tr class="status-error">
+      <td>github-trending-daily<span style="color:#718096"> [已禁用]</span></td>
+      <td>❌ 错误</td>
+      <td>2026/5/14 16:00:38</td>
+      <td>313s</td>
+      <td>-<br><small style="color:#e53e3e">cron: job interrupted by gateway restart</small></td>
+    </tr>
+    <tr class="status-error">
+      <td>llm-pricing-update<span style="color:#718096"> [已禁用]</span></td>
+      <td>❌ 错误</td>
+      <td>2026/5/14 16:00:38</td>
+      <td>313s</td>
+      <td>-<br><small style="color:#e53e3e">cron: job interrupted by gateway restart</small></td>
+    </tr>
+    <tr class="status-error">
+      <td>auto-sync-daily<span style="color:#718096"> [已禁用]</span></td>
+      <td>❌ 错误</td>
+      <td>2026/5/11 19:21:27</td>
+      <td>30s</td>
+      <td>-<br><small style="color:#e53e3e">cron: job execution timed out</small></td>
+    </tr>
+    <tr class="status-error">
+      <td>B站自进化探索<span style="color:#718096"> [已禁用]</span></td>
+      <td>❌ 错误</td>
+      <td>2026/5/14 21:35:53</td>
+      <td>251s</td>
+      <td>-<br><small style="color:#e53e3e">⚠️ 📝 Edit: in memory/bilibili-evolve.json failed</small></td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <p class="updated">最后更新: 2026/5/18 17:05:55 (北京时间)</p>
+</body>
+</html>
