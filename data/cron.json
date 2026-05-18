@@ -1,6 +1,6 @@
 {
-  "updatedAt": 1779077133591,
-  "updatedAtISO": "2026-05-18T04:05:33.591Z",
+  "updatedAt": 1779080660331,
+  "updatedAtISO": "2026-05-18T05:04:20.331Z",
   "jobs": [
     {
       "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
@@ -13,13 +13,13 @@
         "staggerMs": 300000
       },
       "state": {
-        "lastRunAtMs": 1779073441469,
+        "lastRunAtMs": 1779077114025,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24510,
+        "lastDurationMs": 23879,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779077041463
+        "nextRunAtMs": 1779080641463
       }
     },
     {
@@ -28,36 +28,17 @@
       "enabled": true,
       "schedule": {
         "kind": "every",
-        "everyMs": 1800000,
-        "anchorMs": 1778503432662
+        "everyMs": 1620000,
+        "anchorMs": 1779078643489
       },
       "state": {
-        "lastRunAtMs": 1779075845909,
+        "lastRunAtMs": 1779079265925,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 145506,
+        "lastDurationMs": 79669,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779077645909
-      }
-    },
-    {
-      "id": "07d14945-84d5-461c-97c4-72d28fc03731",
-      "name": "B站探索",
-      "enabled": true,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 5400000,
-        "anchorMs": 1779072411664
-      },
-      "state": {
-        "lastRunAtMs": 1779072441480,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 357967,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1779077841480
+        "nextRunAtMs": 1779080885925
       }
     },
     {
@@ -70,13 +51,32 @@
         "anchorMs": 1778571094335
       },
       "state": {
-        "lastRunAtMs": 1779077016133,
+        "lastRunAtMs": 1779080136150,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 95879,
+        "lastDurationMs": 58120,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779078576133
+        "nextRunAtMs": 1779081696150
+      }
+    },
+    {
+      "id": "07d14945-84d5-461c-97c4-72d28fc03731",
+      "name": "B站探索",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 5400000,
+        "anchorMs": 1779072411664
+      },
+      "state": {
+        "lastRunAtMs": 1779077841491,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 135781,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1779083241491
       }
     },
     {
