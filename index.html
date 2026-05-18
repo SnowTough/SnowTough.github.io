@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日简报</title>
+    <!-- Updated: 2026-05-16 -->
+    <style>
+        /* SVG filter for glass edge refraction */
+        .glass-refraction { filter: url(#glass-edge); }
+        .glass-refraction-dark { filter: url(#glass-edge-dark); }
+
+        :root {
+            --bg: #FAFAF8;
+            --card-bg: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --text-tertiary: #8A8A8A;
+            --border: #E5E5E3;
+            --shadow: rgba(0, 0, 0, 0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", sans-serif;
+            background: linear-gradient(145deg, #F2F2F0 0%, #E8E8E6 50%, #DEDEDE 100%);
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 32px 16px 60px; }
+
+        header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--text-primary);
+        }
+
+        .title { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+        .date { font-size: 12px; color: var(--text-tertiary); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(27px) saturate(185%);
+            -webkit-backdrop-filter: blur(27px) saturate(185%);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(8px);
+            animation: cardFadeIn 0.4s ease forwards;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            /* Apply subtle edge refraction for more realistic glass effect */
+            filter: url(#glass-edge);
+        }
+
+        /* 多层边缘光泽 - 模拟液态玻璃折射效果 */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(
+                155deg,
+                rgba(255, 255, 255, 0.45) 0%,
+                rgba(255, 255, 255, 0.22) 16%,
+                rgba(255, 255, 255, 0.08) 32%,
+                transparent 48%,
+                transparent 55%,
+                rgba(255, 255, 255, 0.06) 70%,
+                rgba(255, 255, 255, 0.14) 85%,
+                rgba(255, 255, 255, 0.32) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.48;
+            transition: opacity 0.3s ease;
+        }
+
+        /* 动态光泽层 - 模拟真实玻璃折射与高光 */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(155deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.08) 35%, transparent 50%),
+                linear-gradient(215deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.05) 30%, transparent 48%),
+                radial-gradient(ellipse 120% 70% at 50% 0%, rgba(255,255,255,0.14) 0%, transparent 55%);
+            background-size: 220% 220%;
+            background-position: 0% 50%;
+            pointer-events: none;
+            border-radius: 16px;
+            opacity: 0.30;
+            animation: shimmer 24s ease-in-out infinite;
+            box-shadow: 
+                inset 0 0 40px rgba(255, 255, 255, 0.025),
+                inset 0 -12px 24px -8px rgba(255, 255, 255, 0.01);
+        }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 0.26;
+                background-position: 0% 50%;
+            }
+            25% {
+                opacity: 0.32;
+                background-position: 40% 25%;
+            }
+            50% {
+                opacity: 0.36;
+                background-position: 100% 50%;
+            }
+            75% {
+                opacity: 0.32;
+                background-position: 60% 75%;
+            }
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 
+                0 16px 48px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .card:hover::before {
+            opacity: 0.7;
+            animation-duration: 10s;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon { font-size: 16px; }
+        .card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+
+        .card-weather { grid-column: span 2; }
+
+        .weather-main { display: flex; align-items: center; gap: 32px; margin-bottom: 16px; }
+        .weather-temp { font-size: 48px; font-weight: 200; letter-spacing: -0.03em; }
+        .weather-info { flex: 1; }
+        .weather-condition { font-size: 18px; font-weight: 500; }
+        .weather-extra { display: flex; gap: 20px; font-size: 12px; color: var(--text-secondary); }
+        .weather-extra span { color: var(--text-primary); font-weight: 500; }
+
+        .weather-forecast {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .forecast-hour { flex-shrink: 0; text-align: center; padding: 8px 10px; background: rgba(0, 0, 0, 0.05); border-radius: 6px; min-width: 54px; }
+        .forecast-time { font-size: 10px; color: var(--text-tertiary); margin-bottom: 2px; }
+        .forecast-temp { font-size: 13px; font-weight: 500; }
+
+        .price-list { display: flex; flex-direction: column; gap: 6px; }
+        .price-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; font-size: 12px; }
+        .price-name { font-weight: 500; }
+        .price-val { color: var(--text-secondary); }
+        .price-change { font-size: 10px; padding: 1px 5px; border-radius: 3px; margin-left: 6px; }
+        .price-change.up { background: #E8F5E9; color: #2E7D32; }
+        .price-change.down { background: #FFEBEE; color: #C62828; }
+        .price-change.flat { background: #F0F0F0; color: var(--text-tertiary); }
+        .price-more { font-size: 11px; color: var(--text-tertiary); text-align: center; padding-top: 8px; }
+
+        .trending-list { display: flex; flex-direction: column; gap: 8px; }
+        .trending-item { display: flex; align-items: baseline; gap: 8px; padding: 6px 8px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; font-size: 12px; }
+        .trending-rank { font-size: 10px; font-weight: 600; color: var(--text-tertiary); min-width: 16px; }
+        .trending-name { font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .trending-stars { font-size: 11px; color: var(--text-tertiary); }
+
+        .bilibili-stats { display: flex; gap: 12px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .stat-item { font-size: 11px; }
+        .stat-value { font-weight: 600; font-size: 14px; }
+        .stat-label { color: var(--text-tertiary); font-size: 10px; }
+
+        .video-list { display: flex; flex-direction: column; gap: 6px; }
+        .video-item { padding: 6px 8px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; font-size: 12px; }
+        .video-title { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+        .video-meta { font-size: 10px; color: var(--text-tertiary); }
+
+        footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); text-align: center; font-size: 11px; color: var(--text-tertiary); }
+
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.25s ease; padding: 20px;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal { background: var(--card-bg); border-radius: 12px; max-width: 800px; width: 100%; max-height: 85vh; overflow: hidden; display: flex; flex-direction: column; transform: scale(0.95); transition: transform 0.25s ease; }
+        .modal-overlay.active .modal { transform: scale(1); }
+        .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        .modal-title { font-size: 18px; font-weight: 600; }
+        .modal-close { width: 32px; height: 32px; border: none; background: var(--bg); border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .modal-close:hover { background: var(--border); }
+        .modal-body { padding: 24px; overflow-y: auto; flex: 1; }
+
+        .detail-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .detail-table th, .detail-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+        .detail-table th { font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); background: var(--bg); }
+        .detail-table tr:hover { background: var(--bg); }
+
+        .loading { text-align: center; padding: 40px; color: var(--text-tertiary); }
+
+        .refresh-btn { background:transparent;color:var(--text-primary);border:1px solid var(--border);padding:8px 28px;font-size:12px;font-weight:500;border-radius:20px;cursor:pointer;transition:all 0.2s; }
+        .refresh-btn:hover { background:var(--border); }
+        .refresh-btn.loading { opacity:0.6;pointer-events:none; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .card-weather { grid-column: span 1; }
+            header { flex-direction: column; gap: 4px; }
+            .title { font-size: 24px; }
+        }
+    
+        
+        body.dark { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%) !important; }
+        body.dark .card {
+            background: rgba(35, 35, 35, 0.16) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            backdrop-filter: blur(27px) saturate(185%) !important;
+            -webkit-backdrop-filter: blur(27px) saturate(185%) !important;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.04),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.15),
+                inset 3px 3px 8px rgba(255, 255, 255, 0.02),
+                inset -3px -3px 8px rgba(0, 0, 0, 0.25) !important;
+            /* Apply subtle edge refraction for dark mode */
+            filter: url(#glass-edge-dark);
+        }
+        /* 深色模式多层边缘光泽 - 使用中性白光更协调 */
+        body.dark .card::before {
+            background: linear-gradient(
+                155deg,
+                rgba(255, 255, 255, 0.18) 0%,
+                rgba(255, 255, 255, 0.08) 16%,
+                rgba(255, 255, 255, 0.03) 32%,
+                transparent 48%,
+                transparent 55%,
+                rgba(255, 255, 255, 0.04) 70%,
+                rgba(255, 255, 255, 0.08) 85%,
+                rgba(255, 255, 255, 0.12) 100%
+            ) !important;
+            opacity: 0.48 !important;
+        }
+
+        body.dark .card::after {
+            background: 
+                linear-gradient(155deg, rgba(255,255,255,0.04) 0%, transparent 42%),
+                linear-gradient(215deg, rgba(255,255,255,0.02) 0%, transparent 42%),
+                radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,255,255,0.015) 0%, transparent 50%) !important;
+            background-size: 200% 200% !important;
+            background-position: 0% 50% !important;
+            animation: shimmer 24s ease-in-out infinite !important;
+            opacity: 0.16 !important;
+            /* 增强暗色模式内阴影层次 - 微妙的多层折射效果 */
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.01),
+                inset 0 0 100px rgba(255, 255, 255, 0.005),
+                inset 0 -18px 36px -12px rgba(255, 255, 255, 0.004) !important;
+        }
+        body.dark .card:hover {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 
+                0 16px 48px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.04),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2) !important;
+        }
+        body.dark .card-header { border-color: rgba(255, 255, 255, 0.08) !important; }
+        body.dark .weather-forecast { border-color: rgba(255, 255, 255, 0.08) !important; }
+        body.dark .card-icon, body.dark .card-title { color: rgba(255, 255, 255, 0.7) !important; }
+        body.dark .price-item, body.dark .trending-item, body.dark .video-item { background: rgba(0, 0, 0, 0.2) !important; }
+        body.dark .forecast-hour { background: rgba(0, 0, 0, 0.25) !important; }
+        body.dark .bilibili-stats { border-color: rgba(255, 255, 255, 0.08) !important; }
+        body.dark .modal { background: rgba(35, 35, 35, 0.95) !important; backdrop-filter: blur(26px) saturate(180%) !important; }
+        body.dark .modal-header { border-color: rgba(255, 255, 255, 0.1) !important; }
+        body.dark .detail-table th { background: rgba(0, 0, 0, 0.3) !important; }
+        body.dark .detail-table tr:hover { background: rgba(0, 0, 0, 0.2) !important; }
+        body.dark .modal-overlay { background: rgba(0, 0, 0, 0.7) !important; }
+        body.dark .price-more { color: rgba(255, 255, 255, 0.5) !important; }
+        body.dark .trending-rank, body.dark .trending-stars { color: rgba(255, 255, 255, 0.5) !important; }
+        body.dark .video-meta { color: rgba(255, 255, 255, 0.5) !important; }
+        body.dark .stat-label { color: rgba(255, 255, 255, 0.5) !important; }
+        body.dark .price-item .price-name { color: rgba(255, 255, 255, 0.9) !important; }
+        body.dark .price-item .price-val { color: rgba(255, 255, 255, 0.7) !important; }
+        body.dark .trending-item .trending-name { color: rgba(255, 255, 255, 0.9) !important; }
+        body.dark .video-item .video-title { color: rgba(255, 255, 255, 0.9) !important; }
+        body.dark .forecast-time { color: rgba(255, 255, 255, 0.5) !important; }
+        body.dark .forecast-temp { color: rgba(255, 255, 255, 0.9) !important; }
+        body.dark input { background: rgba(0, 0, 0, 0.3) !important; color: #e0e0e0 !important; }
+        body.dark .refresh-btn { border-color: rgba(255,255,255,0.2) !important; color: #e0e0e0 !important; }
+        body.dark .refresh-btn:hover { background: rgba(255,255,255,0.1) !important; }
+      </style>
+</head>
+<body>
+    <!-- SVG filters for glass edge refraction effect -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <!-- Light mode glass edge refraction - subtle organic distortion -->
+            <filter id="glass-edge" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" result="noise" seed="5"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+                <feGaussianBlur stdDeviation="0.3"/>
+            </filter>
+            <!-- Dark mode glass edge refraction - more subtle -->
+            <filter id="glass-edge-dark" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" result="noise" seed="8"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                <feGaussianBlur stdDeviation="0.2"/>
+            </filter>
+        </defs>
+    </svg>
+    <div class="container">
+        <header>
+            <h1 class="title">今日简报</h1>
+            <span class="date" id="currentDate">Monday, May 11, 2026</span>
+        </header>
+        <div class="grid" id="grid"><div class="loading">加载中...</div></div>
+        <div style="text-align:center;margin-bottom:20px;padding:16px 0;border-bottom:1px solid var(--border);">
+    <button id="refreshBtn" class="refresh-btn" onclick="refreshData()">Refresh</button>
+  </div>
+<div style="text-align:center;margin-top:16px;padding:12px;background:linear-gradient(90deg,rgba(102,126,234,0.1),rgba(118,75,162,0.1));border-radius:8px;">
+    <span style="font-size:11px;color:var(--text-tertiary);">Updated</span>
+    <div id="updateTime" style="font-size:14px;font-weight:600;color:var(--text-primary);margin-top:4px;">2026/5/11 16:52:22</div>
+  </div>
+<footer><p>Built by Fairy · Powered by OpenClaw</p></footer>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">详情</h2>
+                <button class="modal-close" id="modalCloseBtn">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // 全局数据缓存
+        let cachedData = {};
+
+        const now = new Date();
+        
+        // 深色模式切换
+        // 深色模式切换
+        let isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) document.body.classList.add('dark');
+        
+        const darkBtn = document.createElement('button');
+        darkBtn.textContent = isDark ? '◑' : '◐';
+        darkBtn.title = isDark ? 'Light mode' : 'Dark mode';
+        darkBtn.style.cssText = 'position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);cursor:pointer;font-size:18px;z-index:1000;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;';
+        darkBtn.onclick = () => {
+            isDark = !isDark;
+            document.body.classList.toggle('dark', isDark);
+            localStorage.setItem('darkMode', isDark);
+            darkBtn.textContent = isDark ? '◑' : '◐';
+            darkBtn.title = isDark ? 'Light mode' : 'Dark mode';
+        };
+        document.body.appendChild(darkBtn);
+
+        // 回到顶部按钮
+        const scrollBtn = document.createElement('button');
+        scrollBtn.textContent = '↑';
+        scrollBtn.title = 'Back to top';
+        scrollBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);cursor:pointer;font-size:16px;z-index:1000;transition:all 0.3s ease;opacity:0;pointer-events:none;';
+        scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.body.appendChild(scrollBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollBtn.style.opacity = '1';
+                scrollBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollBtn.style.opacity = '0';
+                scrollBtn.style.pointerEvents = 'none';
+            }
+        });
+        document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', { 
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+        });
+
+        function formatNumber(num) {
+            if (num >= 10000) return (num / 10000).toFixed(1) + 'w';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+            return num.toString();
+        }
+
+        function formatChange(change) {
+            if (change === undefined || change === null) return '<span class="price-change flat">N/A</span>';
+            if (change === 0) return '<span class="price-change flat">0%</span>';
+            const cls = change > 0 ? 'up' : 'down';
+            return '<span class="price-change ' + cls + '">' + (change > 0 ? '+' : '') + change + '%</span>';
+        }
+
+        function openModal(title, content) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = content;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target.id === 'modal') closeModal();
+        });
+
+        // 卡片点击处理
+        function handleCardClick(type) {
+            if (type === 'weather') openModal('天气详情', getWeatherModal(cachedData.weather));
+            if (type === 'llm') openModal('LLM 价格详情', getLLMModal(cachedData.llm));
+            if (type === 'trending') openModal('GitHub Trending 详情', getTrendingModal(cachedData.trending));
+            if (type === 'bilibili') openModal('B站 详情', getBilibiliModal(cachedData.bilibili));
+            if (type === 'worldclock') openModal('世界时钟', getWorldClockModal(cachedData.worldClock));
+        }
+
+        function getWorldClockModal(worldClock) {
+            if (!worldClock || !worldClock.locations) return '无数据';
+            const now = new Date();
+            let html = '<table class="detail-table"><tr><th>城市</th><th>时区</th><th>时间</th><th>日期</th></tr>';
+            worldClock.locations.forEach(function(loc) {
+                try {
+                    const locTime = new Date(now.toLocaleString('en-US', { timeZone: loc.timezone }));
+                    html += '<tr><td><b>' + loc.name + '</b></td><td>' + loc.label + '</td><td>' + locTime.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }) + '</td><td>' + locTime.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric' }) + '</td></tr>';
+                } catch(e) {
+                    html += '<tr><td><b>' + loc.name + '</b></td><td>' + loc.label + '</td><td>-</td><td>-</td></tr>';
+                }
+            });
+            html += '</table>';
+            return html;
+        }
+
+        function getWeatherModal(weather) {
+            if (!weather) return '无数据';
+            let html = '<h3>当前天气</h3><table class="detail-table"><tr><th>项目</th><th>数值</th></tr>';
+            if (weather.current) {
+                html += '<tr><td>温度</td><td>' + weather.current.temp + '°C</td></tr>';
+                html += '<tr><td>天气</td><td>' + weather.current.condition + '</td></tr>';
+                html += '<tr><td>湿度</td><td>' + weather.current.humidity + '%</td></tr>';
+                html += '<tr><td>风速</td><td>' + weather.current.wind + ' km/h</td></tr>';
+                html += '<tr><td>AQI</td><td>' + (weather.current.aqi ?? '-') + ' (' + (weather.current.aqi_level ?? '-') + ')</td></tr>';
+            }
+            html += '</table>';
+            if (weather.forecast && weather.forecast.length) {
+                html += '<h3 style="margin-top:24px">逐小时预报</h3><table class="detail-table"><tr><th>时间</th><th>温度</th><th>天气</th></tr>';
+                weather.forecast.forEach(function(h) {
+                    html += '<tr><td>' + h.hour + '</td><td>' + h.temp + '°C</td><td>' + h.condition + '</td></tr>';
+                });
+                html += '</table>';
+            }
+            return html;
+        }
+
+        function getLLMModal(llm) {
+            if (!llm || !llm.models) return '无数据';
+            let html = '<table class="detail-table"><tr><th>模型</th><th>提供商</th><th>输入</th><th>输出</th><th>Context</th><th>变动</th></tr>';
+            llm.models.forEach(function(m) {
+                html += '<tr><td>' + m.name + '</td><td>' + m.provider + '</td><td>$' + m.input + '</td><td>$' + m.output + '</td><td>' + m.context + '</td><td>' + formatChange(m.change || 0) + '</td></tr>';
+            });
+            html += '</table>';
+            return html;
+        }
+
+        function getTrendingModal(trending) {
+            if (!trending || !trending.projects) return '无数据';
+            let html = '<table class="detail-table"><tr><th>#</th><th>项目</th><th>描述</th><th>语言</th><th>Stars</th><th>今日</th></tr>';
+            trending.projects.forEach(function(p, i) {
+                html += '<tr><td>' + (i + 1) + '</td><td><b>' + p.owner + '/' + p.name + '</b></td><td>' + p.description + '</td><td>' + p.language + '</td><td>' + formatNumber(p.stars) + '</td><td>+' + formatNumber(p.starsToday) + '</td></tr>';
+            });
+            html += '</table>';
+            return html;
+        }
+
+        function getBilibiliModal(bilibili) {
+            if (!bilibili) return '无数据';
+            let html = '';
+            if (bilibili.account) {
+                html += '<h3>账号状态</h3><table class="detail-table"><tr><th>等级</th><th>粉丝</th><th>获赞</th><th>投币</th><th>关注</th></tr>';
+                html += '<tr><td>LV' + bilibili.account.level + '</td><td>' + bilibili.account.followers + '</td><td>' + bilibili.account.likes + '</td><td>' + bilibili.account.coins + '</td><td>' + bilibili.account.following + '</td></tr>';
+                html += '</table>';
+            }
+            if (bilibili.videos) {
+                html += '<h3 style="margin-top:24px">观看视频</h3><table class="detail-table"><tr><th>标题</th><th>播放</th><th>点赞</th><th>投币</th><th>收藏</th><th>时长</th></tr>';
+                bilibili.videos.forEach(function(v) {
+                    html += '<tr><td>' + v.title + '</td><td>' + formatNumber(v.views) + '</td><td>' + formatNumber(v.likes) + '</td><td>' + formatNumber(v.coins) + '</td><td>' + formatNumber(v.favorites) + '</td><td>' + v.duration + '</td></tr>';
+                });
+                html += '</table>';
+            }
+            return html;
+        }
+
+        async function loadData() {
+            const grid = document.getElementById('grid');
+            
+            try {
+                const [weather, llm, bilibili, trending, worldClock] = await Promise.all([
+                    fetch('data/weather.json').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+                    fetch('data/llm-pricing.json').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+                    fetch('data/bilibili.json').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+                    fetch('data/github-trending.json').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+                    fetch('data/world-clock.json').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; })
+                ]);
+
+                // 缓存数据供弹窗使用
+                cachedData = { weather: weather, llm: llm, bilibili: bilibili, trending: trending, worldClock: worldClock };
+
+                let html = '';
+
+                // 天气卡片
+                if (weather && weather.current) {
+                    const w = weather.current;
+                    let forecastHtml = '';
+                    if (weather.forecast) {
+                        forecastHtml = '<div class="weather-forecast">';
+                        weather.forecast.forEach(function(h) {
+                            forecastHtml += '<div class="forecast-hour"><div class="forecast-time">' + h.hour + '</div><div class="forecast-temp">' + h.temp + '°</div></div>';
+                        });
+                        forecastHtml += '</div>';
+                    }
+                    
+                    html += '<div class="card card-weather" data-type="weather">' +
+                        '<div class="card-header"><span class="card-icon">天</span><span class="card-title">天气 · 杭州</span></div>' +
+                        '<div class="weather-main"><div class="weather-temp">' + w.temp + '°</div>' +
+                        '<div class="weather-info"><div class="weather-condition">' + w.condition + '</div>' +
+                        '<div class="weather-extra"><span>湿度 ' + w.humidity + '%</span><span>风速 ' + w.wind + '</span><span>AQI ' + (w.aqi ?? '-') + ' (' + (w.aqi_level ?? '-') + ')</span></div></div></div>' +
+                        forecastHtml + '</div>';
+                }
+
+                // LLM 价格
+                if (llm && llm.models) {
+                    const preview = llm.models.slice(0, 5);
+                    let listHtml = '';
+                    preview.forEach(function(m) {
+                        listHtml += '<div class="price-item"><span class="price-name">' + m.name + '</span><span class="price-val">$' + m.input + ' ' + formatChange(m.change || 0) + '</span></div>';
+                    });
+                    
+                    html += '<div class="card" data-type="llm">' +
+                        '<div class="card-header"><span class="card-icon">$</span><span class="card-title">LLM 价格</span></div>' +
+                        '<div class="price-list">' + listHtml + '</div>' +
+                        '<div class="price-more">点击查看全部 ' + llm.models.length + ' 个模型 →</div></div>';
+                }
+
+                // GitHub Trending
+                if (trending && trending.projects) {
+                    const preview = trending.projects.slice(0, 5);
+                    let listHtml = '';
+                    preview.forEach(function(p, i) {
+                        listHtml += '<div class="trending-item"><span class="trending-rank">' + (i + 1) + '</span><span class="trending-name">' + p.name + '</span><span class="trending-stars">⭐ ' + formatNumber(p.stars) + '</span></div>';
+                    });
+                    
+                    html += '<div class="card" data-type="trending">' +
+                        '<div class="card-header"><span class="card-icon">Git</span><span class="card-title">GitHub Trending</span></div>' +
+                        '<div class="trending-list">' + listHtml + '</div>' +
+                        '<div class="price-more">点击查看全部 ' + trending.projects.length + ' 个项目 →</div></div>';
+                }
+
+                // B站
+                if (bilibili && bilibili.videos) {
+                    const preview = bilibili.videos.slice(0, 4);
+                    let statsHtml = '';
+                    if (bilibili.account) {
+                        statsHtml = '<div class="bilibili-stats"><div class="stat-item"><div class="stat-value">' + bilibili.account.level + '</div><div class="stat-label">等级</div></div><div class="stat-item"><div class="stat-value">' + formatNumber(bilibili.account.followers) + '</div><div class="stat-label">粉丝</div></div><div class="stat-item"><div class="stat-value">' + formatNumber(bilibili.account.likes) + '</div><div class="stat-label">获赞</div></div></div>';
+                    }
+                    
+                    let listHtml = '';
+                    preview.forEach(function(v) {
+                        listHtml += '<div class="video-item"><div class="video-title">' + v.title + '</div><div class="video-meta">播 ' + formatNumber(v.views) + ' · 赞 ' + formatNumber(v.likes) + '</div></div>';
+                    });
+                    
+                    html += '<div class="card" data-type="bilibili">' +
+                        '<div class="card-header"><span class="card-icon">播</span><span class="card-title">B站动态</span></div>' +
+                        statsHtml + '<div class="video-list">' + listHtml + '</div>' +
+                        '<div class="price-more">点击查看全部 ' + bilibili.videos.length + ' 个视频 →</div></div>';
+                }
+
+                // World Clock
+                if (worldClock && worldClock.locations) {
+                    const now = new Date();
+                    let listHtml = '';
+                    worldClock.locations.forEach(function(loc) {
+                        try {
+                            const locTime = new Date(now.toLocaleString('en-US', { timeZone: loc.timezone }));
+                            const timeStr = locTime.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+                            const dateStr = locTime.toLocaleDateString('en-GB', { month: 'short', day: 'numeric' });
+                            listHtml += '<div class="price-item"><span class="price-name">' + loc.name + ' <span style="color:var(--text-tertiary);font-size:10px;">' + loc.label + '</span></span><span class="price-val" style="font-weight:600;">' + timeStr + ' <span style="font-weight:400;color:var(--text-tertiary);font-size:10px;">' + dateStr + '</span></span></div>';
+                        } catch(e) {
+                            listHtml += '<div class="price-item"><span class="price-name">' + loc.name + '</span><span class="price-val">-</span></div>';
+                        }
+                    });
+                    
+                    html += '<div class="card" data-type="worldclock">' +
+                        '<div class="card-header"><span class="card-icon">时</span><span class="card-title">世界时钟</span></div>' +
+                        '<div class="price-list">' + listHtml + '</div></div>';
+                }
+
+                if (!html) html = '<div class="loading">暂无数据</div>';
+                grid.innerHTML = html;
+
+                // 添加卡片动画延迟
+                document.querySelectorAll('.card').forEach(function(card, i) {
+                    card.style.animationDelay = (i * 0.08) + 's';
+                });
+
+                // 绑定卡片点击事件
+                document.querySelectorAll('.card').forEach(function(card) {
+                    card.addEventListener('click', function() {
+                        handleCardClick(this.getAttribute('data-type'));
+                    });
+                });
+
+            } catch (e) {
+                console.error(e);
+                grid.innerHTML = '<div class="loading">加载失败</div>';
+            }
+        }
+
+        loadData();
+
+        // Refresh function with loading state
+        function refreshData() {
+            const btn = document.getElementById('refreshBtn');
+            btn.classList.add('loading');
+            btn.textContent = 'Loading...';
+            loadData().then(function() {
+                btn.classList.remove('loading');
+                btn.textContent = 'Refresh';
+                // Update timestamp
+                document.getElementById('updateTime').textContent = new Date().toLocaleString('zh-CN', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }).catch(function() {
+                btn.classList.remove('loading');
+                btn.textContent = 'Refresh';
+            });
+        }
+    </script>
+</body>
+</html>

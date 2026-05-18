@@ -1,0 +1,78 @@
+{
+  "updatedAt": "2026-05-11T03:11:00Z",
+  "period": "weekly",
+  "projects": [
+    {
+      "name": "TradingAgents",
+      "owner": "TauricResearch",
+      "stars": 73288,
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "starsToday": 8872,
+      "url": "https://github.com/TauricResearch/TradingAgents"
+    },
+    {
+      "name": "skills",
+      "owner": "mattpocock",
+      "stars": 69351,
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "starsToday": 12722,
+      "url": "https://github.com/mattpocock/skills"
+    },
+    {
+      "name": "ruflo",
+      "owner": "ruvnet",
+      "stars": 48546,
+      "description": "The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems.",
+      "language": "TypeScript",
+      "starsToday": 10779,
+      "url": "https://github.com/ruvnet/ruflo"
+    },
+    {
+      "name": "agent-skills",
+      "owner": "addyosmani",
+      "stars": 38627,
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "Shell",
+      "starsToday": 10738,
+      "url": "https://github.com/addyosmani/agent-skills"
+    },
+    {
+      "name": "PageIndex",
+      "owner": "VectifyAI",
+      "stars": 30471,
+      "description": "PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+      "language": "Python",
+      "starsToday": 4328,
+      "url": "https://github.com/VectifyAI/PageIndex"
+    },
+    {
+      "name": "UI-TARS-desktop",
+      "owner": "bytedance",
+      "stars": 32286,
+      "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
+      "language": "TypeScript",
+      "starsToday": 2191,
+      "url": "https://github.com/bytedance/UI-TARS-desktop"
+    },
+    {
+      "name": "dexter",
+      "owner": "virattt",
+      "stars": 25180,
+      "description": "An autonomous agent for deep financial research",
+      "language": "TypeScript",
+      "starsToday": 2741,
+      "url": "https://github.com/virattt/dexter"
+    },
+    {
+      "name": "symphony",
+      "owner": "openai",
+      "stars": 23200,
+      "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
+      "language": "Elixir",
+      "starsToday": 2204,
+      "url": "https://github.com/openai/symphony"
+    }
+  ]
+}

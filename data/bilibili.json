@@ -1,0 +1,103 @@
+{
+  "updatedAt": "2026-05-11T20:05:00+08:00",
+  "account": {
+    "level": 2,
+    "followers": 1,
+    "following": 4,
+    "likes": 0,
+    "coins": 3,
+    "spaceUrl": "https://space.bilibili.com/3706985117649359"
+  },
+  "videos": [
+    {
+      "title": "近年AI应用技术串讲与优质文档分享｜Agent、Skill、OpenClaw、Harness……",
+      "bvid": "BV1zSDMBUE5o",
+      "url": "https://www.bilibili.com/video/BV1zSDMBUE5o",
+      "views": 172000,
+      "likes": 220,
+      "coins": 8115,
+      "favorites": 2498,
+      "duration": "33:45",
+      "category": "技术/AI"
+    },
+    {
+      "title": "7个免费AI Skills，帮我从自媒体体力活中彻底解脱｜封面、文案、排版",
+      "bvid": "BV1J1o3B6Emz",
+      "url": "https://www.bilibili.com/video/BV1J1o3B6Emz",
+      "views": 6380,
+      "likes": 2,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "19:20",
+      "category": "技术/AI"
+    },
+    {
+      "title": "海底捞强迫员工自费为顾客买礼物，总部的罪己诏更离谱",
+      "bvid": "BV147oNBvELo",
+      "url": "https://www.bilibili.com/video/BV147oNBvELo",
+      "views": 967000,
+      "likes": 2307,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "13:11",
+      "category": "社会"
+    },
+    {
+      "title": "经济越来越像一场“智力游戏”",
+      "bvid": "BV1D49BBoE49",
+      "url": "https://www.bilibili.com/video/BV1D49BBoE49",
+      "views": 122000,
+      "likes": 282,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "16:10",
+      "category": "财经"
+    },
+    {
+      "title": "中西思想与文化命运 王德峰 |【老师在B站】04",
+      "bvid": "BV1Z8o5B7Eds",
+      "url": "https://www.bilibili.com/video/BV1Z8o5B7Eds",
+      "views": 867000,
+      "likes": 826,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "02:07:38",
+      "category": "文化"
+    },
+    {
+      "title": "被裁员、抗癌、至亲离世…重启人生，我带着新游戏来 B 站寻找答案",
+      "bvid": "BV1o29eB4EgL",
+      "url": "https://www.bilibili.com/video/BV1o29eB4EgL",
+      "views": 55000,
+      "likes": 71,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "08:12",
+      "category": "生活"
+    },
+    {
+      "title": "Codex (APP) 保姆级全攻略，海量实战教程，一期精通Codex",
+      "bvid": "BV1Kk9kBAEJv",
+      "url": "https://www.bilibili.com/video/BV1Kk9kBAEJv",
+      "views": 367000,
+      "likes": 484,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "38:13",
+      "category": "技术/AI",
+      "isOwner": true
+    },
+    {
+      "title": "【深度】AI来了，你失业了吗？一个视频看懂AI重构社会的逻辑",
+      "bvid": "BV1r5RDB7Eg7",
+      "url": "https://www.bilibili.com/video/BV1r5RDB7Eg7",
+      "views": 210000,
+      "likes": 782,
+      "coins": 0,
+      "favorites": 0,
+      "duration": "35:45",
+      "category": "技术/AI",
+      "isOwner": true
+    }
+  ]
+}
