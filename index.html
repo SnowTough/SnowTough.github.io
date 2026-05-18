@@ -267,7 +267,10 @@
             transform: translateY(-4px);
             box-shadow: 
                 0 16px 48px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                /* 悬停时增强边缘高光 - 更明显的玻璃质感 */
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+                inset 0 2px 8px rgba(255, 255, 255, 0.1);
         }
 
         .card:hover::before {
@@ -441,7 +444,10 @@
                 0 16px 48px rgba(0, 0, 0, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 inset 2px 2px 4px rgba(255, 255, 255, 0.04),
-                inset -2px -2px 4px rgba(0, 0, 0, 0.2) !important;
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+                /* 深色模式悬停时增强边缘高光 - 更明显的玻璃质感 */
+                inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+                inset 0 2px 10px rgba(255, 255, 255, 0.05) !important;
         }
         body.dark .card-header { border-color: rgba(255, 255, 255, 0.08) !important; }
         body.dark .weather-forecast { border-color: rgba(255, 255, 255, 0.08) !important; }
