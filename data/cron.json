@@ -1,6 +1,6 @@
 {
-  "updatedAt": 1779080660331,
-  "updatedAtISO": "2026-05-18T05:04:20.331Z",
+  "updatedAt": 1779084344853,
+  "updatedAtISO": "2026-05-18T06:05:44.853Z",
   "jobs": [
     {
       "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
@@ -13,32 +13,13 @@
         "staggerMs": 300000
       },
       "state": {
-        "lastRunAtMs": 1779077114025,
+        "lastRunAtMs": 1779080641472,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23879,
+        "lastDurationMs": 22431,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779080641463
-      }
-    },
-    {
-      "id": "e1551bfb-7b24-4f87-a8b6-7b5cc1ccfa09",
-      "name": "简报页面自进化",
-      "enabled": true,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 1620000,
-        "anchorMs": 1779078643489
-      },
-      "state": {
-        "lastRunAtMs": 1779079265925,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 79669,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1779080885925
+        "nextRunAtMs": 1779084241463
       }
     },
     {
@@ -51,13 +32,32 @@
         "anchorMs": 1778571094335
       },
       "state": {
-        "lastRunAtMs": 1779080136150,
+        "lastRunAtMs": 1779083348880,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 58120,
+        "lastDurationMs": 77691,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779081696150
+        "nextRunAtMs": 1779084908880
+      }
+    },
+    {
+      "id": "e1551bfb-7b24-4f87-a8b6-7b5cc1ccfa09",
+      "name": "简报页面自进化",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1620000,
+        "anchorMs": 1779078643489
+      },
+      "state": {
+        "lastRunAtMs": 1779084125950,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 197962,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1779085745950
       }
     },
     {
@@ -70,13 +70,13 @@
         "anchorMs": 1779072411664
       },
       "state": {
-        "lastRunAtMs": 1779077841491,
+        "lastRunAtMs": 1779083241500,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 135781,
+        "lastDurationMs": 105366,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779083241491
+        "nextRunAtMs": 1779088641500
       }
     },
     {
