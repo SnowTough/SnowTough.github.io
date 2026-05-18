@@ -202,7 +202,7 @@
         .orb-1 {
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,220,180,0.8) 0%, rgba(255,200,150,0.4) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,235,210,0.6) 0%, rgba(255,220,180,0.35) 40%, transparent 70%);
             top: -150px;
             left: -100px;
             animation-delay: 0s;
@@ -210,7 +210,7 @@
         .orb-2 {
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(200,220,255,0.6) 0%, rgba(180,200,240,0.3) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,240,220,0.5) 0%, rgba(255,230,200,0.3) 40%, transparent 70%);
             top: 30%;
             right: -80px;
             animation-delay: -7s;
@@ -219,7 +219,7 @@
         .orb-3 {
             width: 350px;
             height: 350px;
-            background: radial-gradient(circle, rgba(255,210,200,0.5) 0%, rgba(255,190,180,0.25) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,225,200,0.45) 0%, rgba(255,210,180,0.25) 40%, transparent 70%);
             bottom: -100px;
             left: 30%;
             animation-delay: -14s;
@@ -228,7 +228,7 @@
         .orb-4 {
             width: 280px;
             height: 280px;
-            background: radial-gradient(circle, rgba(220,255,230,0.4) 0%, rgba(200,245,215,0.2) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,240,230,0.35) 0%, rgba(255,230,215,0.2) 40%, transparent 70%);
             bottom: 20%;
             right: 20%;
             animation-delay: -5s;
@@ -237,27 +237,27 @@
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -20px) scale(1.05); }
-            50% { transform: translate(-20px, 30px) scale(0.95); }
-            75% { transform: translate(20px, 20px) scale(1.02); }
+            25% { transform: translate(25px, -15px) scale(1.03); }
+            50% { transform: translate(-15px, 20px) scale(0.97); }
+            75% { transform: translate(15px, 15px) scale(1.01); }
         }
 
         /* 深色模式浮动光球 */
         body.dark .orb-1 {
-            background: radial-gradient(circle, rgba(180,140,100,0.5) 0%, rgba(140,100,70,0.25) 40%, transparent 70%);
-            opacity: 0.25;
+            background: radial-gradient(circle, rgba(180,150,120,0.4) 0%, rgba(150,120,90,0.2) 40%, transparent 70%);
+            opacity: 0.2;
         }
         body.dark .orb-2 {
-            background: radial-gradient(circle, rgba(100,130,180,0.4) 0%, rgba(80,110,160,0.2) 40%, transparent 70%);
-            opacity: 0.3;
+            background: radial-gradient(circle, rgba(170,155,135,0.35) 0%, rgba(145,130,110,0.18) 40%, transparent 70%);
+            opacity: 0.25;
         }
         body.dark .orb-3 {
-            background: radial-gradient(circle, rgba(160,100,120,0.35) 0%, rgba(130,80,100,0.18) 40%, transparent 70%);
-            opacity: 0.28;
+            background: radial-gradient(circle, rgba(165,140,125,0.3) 0%, rgba(140,115,100,0.15) 40%, transparent 70%);
+            opacity: 0.22;
         }
         body.dark .orb-4 {
-            background: radial-gradient(circle, rgba(80,140,120,0.3) 0%, rgba(60,120,100,0.15) 40%, transparent 70%);
-            opacity: 0.22;
+            background: radial-gradient(circle, rgba(160,150,140,0.28) 0%, rgba(140,130,120,0.14) 40%, transparent 70%);
+            opacity: 0.18;
         }
 
         .card:hover {
