@@ -1,7 +1,29 @@
 {
   "task": "液态玻璃效果优化",
-  "lastUpdate": "2026-05-18T19:17:00+08:00",
+  "lastUpdate": "2026-05-18T20:57:00+08:00",
   "changes": [
+    {
+      "version": "fb67bed",
+      "timestamp": "2026-05-18T20:57:00+08:00",
+      "description": "优化动态光泽动画速度 - 更优雅从容的流动效果",
+      "details": [
+        "浅色模式 shimmer 动画：12s -> 14s，光感更从容优雅",
+        "深色模式保持 14s 一致，整体效果更协调统一",
+        "整体动画速度放慢，光泽流动更细腻流畅"
+      ]
+    },
+    {
+      "version": "3e187ad",
+      "timestamp": "2026-05-18T19:41:00+08:00",
+      "description": "添加 SVG 滤镜实现真实边缘折射扭曲效果",
+      "details": [
+        "浅色模式：baseFrequency 0.012, scale 4, stdDeviation 0.3 - 更明显的液态流动感",
+        "深色模式：baseFrequency 0.008, scale 3, stdDeviation 0.25 - 更微妙的边缘位移",
+        "使用 feTurbulence + feDisplacementMap 实现真实的边缘扭曲",
+        "同步应用于 modal 深色模式，保持视觉一致性",
+        "保持优雅克制的风格，不过度使用扭曲效果"
+      ]
+    },
     {
       "version": "867d6ee",
       "timestamp": "2026-05-18T19:17:00+08:00",
