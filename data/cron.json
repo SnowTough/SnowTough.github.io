@@ -1,6 +1,6 @@
 {
-  "updatedAt": 1779073461696,
-  "updatedAtISO": "2026-05-18T03:04:21.696Z",
+  "updatedAt": 1779077133591,
+  "updatedAtISO": "2026-05-18T04:05:33.591Z",
   "jobs": [
     {
       "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
@@ -13,32 +13,13 @@
         "staggerMs": 300000
       },
       "state": {
-        "lastRunAtMs": 1779072197830,
+        "lastRunAtMs": 1779073441469,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 48058,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1779073441463
-      }
-    },
-    {
-      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
-      "name": "系统健康巡检",
-      "enabled": true,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 1560000,
-        "anchorMs": 1778571094335
-      },
-      "state": {
-        "lastRunAtMs": 1779072336099,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 103350,
+        "lastDurationMs": 24510,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779073896099
+        "nextRunAtMs": 1779077041463
       }
     },
     {
@@ -51,13 +32,13 @@
         "anchorMs": 1778503432662
       },
       "state": {
-        "lastRunAtMs": 1779072245888,
+        "lastRunAtMs": 1779075845909,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 90211,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 145506,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1779074045888
+        "nextRunAtMs": 1779077645909
       }
     },
     {
@@ -77,6 +58,25 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "nextRunAtMs": 1779077841480
+      }
+    },
+    {
+      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
+      "name": "系统健康巡检",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1560000,
+        "anchorMs": 1778571094335
+      },
+      "state": {
+        "lastRunAtMs": 1779077016133,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 95879,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1779078576133
       }
     },
     {
