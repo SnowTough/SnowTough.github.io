@@ -292,37 +292,41 @@
             /* Apply subtle edge refraction for dark mode */
             filter: url(#glass-edge-dark);
         }
-        /* 深色模式多层边缘光泽 - 使用中性白光更协调 */
+        /* 深色模式多层边缘光泽 - 更通透的玻璃效果 */
+        body.dark .card {
+            background: rgba(30, 30, 32, 0.22) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
         body.dark .card::before {
             background: linear-gradient(
-                155deg,
-                rgba(255, 255, 255, 0.18) 0%,
-                rgba(255, 255, 255, 0.08) 16%,
-                rgba(255, 255, 255, 0.03) 32%,
-                transparent 48%,
-                transparent 55%,
-                rgba(255, 255, 255, 0.04) 70%,
-                rgba(255, 255, 255, 0.08) 85%,
-                rgba(255, 255, 255, 0.12) 100%
+                160deg,
+                rgba(255, 255, 255, 0.22) 0%,
+                rgba(255, 255, 255, 0.10) 14%,
+                rgba(255, 255, 255, 0.04) 28%,
+                transparent 45%,
+                transparent 52%,
+                rgba(255, 255, 255, 0.03) 68%,
+                rgba(255, 255, 255, 0.08) 82%,
+                rgba(255, 255, 255, 0.15) 100%
             ) !important;
-            opacity: 0.48 !important;
+            opacity: 0.55 !important;
         }
 
         body.dark .card::after {
             background: 
-                linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 35%),
-                linear-gradient(155deg, rgba(255,255,255,0.06) 0%, transparent 35%),
-                linear-gradient(215deg, rgba(255,255,255,0.03) 0%, transparent 35%),
-                radial-gradient(ellipse 100% 40% at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 45%) !important;
-            background-size: 200% 200% !important;
+                linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 32%),
+                linear-gradient(155deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 28%, transparent 42%),
+                linear-gradient(215deg, rgba(255,255,255,0.05) 0%, transparent 32%),
+                radial-gradient(ellipse 100% 45% at 50% -5%, rgba(255,255,255,0.14) 0%, transparent 50%) !important;
+            background-size: 240% 240% !important;
             background-position: 0% 50% !important;
-            animation: shimmer 28s ease-in-out infinite !important;
-            opacity: 0.20 !important;
-            /* 增强暗色模式内阴影层次 - 微妙的多层折射效果 */
+            animation: shimmer 32s ease-in-out infinite !important;
+            opacity: 0.28 !important;
             box-shadow: 
-                inset 0 0 60px rgba(255, 255, 255, 0.015),
-                inset 0 0 120px rgba(255, 255, 255, 0.008),
-                inset 0 -20px 40px -14px rgba(255, 255, 255, 0.006) !important;
+                inset 0 0 80px rgba(255, 255, 255, 0.018),
+                inset 0 0 140px rgba(255, 255, 255, 0.008),
+                inset 0 -25px 50px -18px rgba(255, 255, 255, 0.008),
+                inset 2px 2px 6px rgba(255, 255, 255, 0.015) !important;
         }
         body.dark .card:hover {
             border-color: rgba(255, 255, 255, 0.2) !important;
