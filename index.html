@@ -285,7 +285,7 @@
         }
     
         
-        body.dark { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%) !important; }
+        body.dark { background: linear-gradient(145deg, #1a1c24 0%, #12141c 50%, #1a1c24 100%) !important; }
         body.dark .card {
             background: rgba(35, 35, 35, 0.16) !important;
             border: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -298,9 +298,9 @@
                 inset -1px -1px 2px rgba(0, 0, 0, 0.15),
                 inset 3px 3px 8px rgba(255, 255, 255, 0.02),
                 inset -3px -3px 8px rgba(0, 0, 0, 0.25),
-                /* 深色模式多层内阴影 - 增加通透与层次感 */
-                inset 2px 2px 5px rgba(255, 255, 255, 0.03),
-                inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+                /* 深色模式多层内阴影 - 增加通透与层次感 + 微妙蓝调 */
+                inset 2px 2px 5px rgba(255, 255, 255, 0.025),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.22),
                 inset 0 10px 20px -10px rgba(255, 255, 255, 0.025),
                 inset 0 -10px 24px -14px rgba(0, 0, 0, 0.3) !important;
             /* Apply subtle edge refraction for dark mode */
@@ -308,34 +308,34 @@
         }
         /* 深色模式多层边缘光泽 - 更通透的玻璃效果 */
         body.dark .card {
-            background: rgba(30, 30, 32, 0.22) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            background: rgba(28, 30, 38, 0.24) !important;
+            border: 1px solid rgba(255, 255, 255, 0.09) !important;
         }
         body.dark .card::before {
             background: linear-gradient(
                 160deg,
-                rgba(255, 255, 255, 0.20) 0%,
-                rgba(255, 255, 255, 0.09) 14%,
-                rgba(255, 255, 255, 0.04) 28%,
+                rgba(255, 255, 255, 0.18) 0%,
+                rgba(255, 255, 255, 0.08) 14%,
+                rgba(255, 255, 255, 0.035) 28%,
                 transparent 45%,
                 transparent 52%,
-                rgba(255, 255, 255, 0.03) 68%,
-                rgba(255, 255, 255, 0.07) 82%,
-                rgba(255, 255, 255, 0.14) 100%
+                rgba(255, 255, 255, 0.025) 68%,
+                rgba(255, 255, 255, 0.06) 82%,
+                rgba(255, 255, 255, 0.12) 100%
             ) !important;
-            opacity: 0.54 !important;
+            opacity: 0.50 !important;
         }
 
         body.dark .card::after {
             background: 
-                linear-gradient(180deg, rgba(255,255,255,0.14) 0%, transparent 28%),
-                linear-gradient(155deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 24%, transparent 36%),
-                linear-gradient(215deg, rgba(255,255,255,0.08) 0%, transparent 28%),
-                radial-gradient(ellipse 100% 42% at 50% -6%, rgba(200,205,230,0.12) 0%, transparent 50%) !important;
+                linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 28%),
+                linear-gradient(155deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.035) 24%, transparent 36%),
+                linear-gradient(215deg, rgba(255,255,255,0.06) 0%, transparent 28%),
+                radial-gradient(ellipse 100% 42% at 50% -6%, rgba(180,190,220,0.10) 0%, transparent 50%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
-            animation: shimmer 14s ease-in-out infinite !important;
-            opacity: 0.42 !important;
+            animation: shimmer 13s ease-in-out infinite !important;
+            opacity: 0.38 !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
@@ -359,7 +359,7 @@
         body.dark .price-item, body.dark .trending-item, body.dark .video-item { background: rgba(0, 0, 0, 0.2) !important; }
         body.dark .forecast-hour { background: rgba(0, 0, 0, 0.25) !important; }
         body.dark .bilibili-stats { border-color: rgba(255, 255, 255, 0.08) !important; }
-        body.dark .modal { background: rgba(35, 35, 35, 0.95) !important; backdrop-filter: blur(24px) saturate(180%) !important; }
+        body.dark .modal { background: rgba(28, 30, 38, 0.96) !important; backdrop-filter: blur(22px) saturate(180%) !important; }
         body.dark .modal-header { border-color: rgba(255, 255, 255, 0.1) !important; }
         body.dark .detail-table th { background: rgba(0, 0, 0, 0.3) !important; }
         body.dark .detail-table tr:hover { background: rgba(0, 0, 0, 0.2) !important; }
