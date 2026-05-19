@@ -1,7 +1,19 @@
 {
   "task": "液态玻璃效果优化",
-  "lastUpdate": "2026-05-19T16:36:00+08:00",
+  "lastUpdate": "2026-05-19T17:24:00+08:00",
   "changes": [
+    {
+      "version": "7ca7e84",
+      "timestamp": "2026-05-19T17:24:00+08:00",
+      "description": "修复深色模式animation冲突并微调边缘光泽 - 更优雅克制的液态玻璃效果",
+      "details": [
+        "删除重复的 animation: shimmer 定义，只保留 shimmer-dark",
+        "深色模式边缘光泽透明度: 0.52 -> 0.48，降低4%更微妙",
+        "调整边缘渐变透明度梯度，整体更平滑过渡",
+        "JavaScript 语法检查通过"
+      ],
+      "tested": true
+    },
     {
       "version": "b7d9cfe",
       "timestamp": "2026-05-19T16:36:00+08:00",
