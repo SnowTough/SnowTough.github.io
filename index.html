@@ -396,17 +396,17 @@
         /* 深色模式多层边缘光泽 - 更通透的玻璃效果 */
         body.dark .card::before {
             background: linear-gradient(
-                168deg,
-                rgba(255, 255, 255, 0.28) 0%,
-                rgba(255, 255, 255, 0.16) 10%,
-                rgba(255, 255, 255, 0.08) 22%,
+                165deg,
+                rgba(255, 255, 255, 0.24) 0%,
+                rgba(255, 255, 255, 0.12) 10%,
+                rgba(255, 255, 255, 0.06) 22%,
                 transparent 44%,
                 transparent 56%,
-                rgba(255, 255, 255, 0.03) 68%,
-                rgba(255, 255, 255, 0.08) 82%,
-                rgba(255, 255, 255, 0.20) 100%
+                rgba(255, 255, 255, 0.025) 68%,
+                rgba(255, 255, 255, 0.06) 82%,
+                rgba(255, 255, 255, 0.16) 100%
             ) !important;
-            opacity: 0.52 !important;
+            opacity: 0.48 !important;
         }
 
         body.dark .card::after {
@@ -425,9 +425,7 @@
                 radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,210,240,0.025) 0%, transparent 60%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
-            animation: shimmer 17s ease-in-out infinite !important;
             animation: shimmer-dark 17s ease-in-out infinite !important;
-            /* Removed static opacity - using animated shimmer instead */
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
