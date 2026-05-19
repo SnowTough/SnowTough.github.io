@@ -107,7 +107,7 @@
             transition: opacity 0.3s ease;
         }
 
-        /* 动态光泽层 - 模拟真实玻璃折射与高光，带柔和暖白色调，层次更丰富 */
+        /* 动态光泽层 - 简化关键帧，更流畅优雅的流动效果 */
         .card::after {
             content: '';
             position: absolute;
@@ -132,8 +132,8 @@
             background-position: 0% 50%;
             pointer-events: none;
             border-radius: 16px;
-            opacity: 0.26;
-            animation: shimmer 16s ease-in-out infinite;
+            opacity: 0.24;
+            animation: shimmer 18s ease-in-out infinite;
             box-shadow: 
                 inset 0 0 50px rgba(255, 255, 255, 0.03),
                 inset 0 -15px 30px -10px rgba(255, 255, 255, 0.015),
@@ -150,42 +150,10 @@
         }
 
         @keyframes shimmer {
-            0% {
-                opacity: 0.28;
-                background-position: 0% 50%;
-            }
-            12% {
-                opacity: 0.36;
-                background-position: 15% 25%;
-            }
-            25% {
-                opacity: 0.44;
-                background-position: 35% 20%;
-            }
-            37% {
-                opacity: 0.52;
-                background-position: 60% 30%;
-            }
-            50% {
-                opacity: 0.44;
-                background-position: 85% 45%;
-            }
-            62% {
-                opacity: 0.36;
-                background-position: 70% 60%;
-            }
-            75% {
-                opacity: 0.32;
-                background-position: 50% 70%;
-            }
-            87% {
-                opacity: 0.28;
-                background-position: 25% 55%;
-            }
-            100% {
-                opacity: 0.28;
-                background-position: 0% 50%;
-            }
+            0%, 100% { opacity: 0.24; background-position: 0% 50%; }
+            25% { opacity: 0.30; background-position: 30% 25%; }
+            50% { opacity: 0.24; background-position: 70% 50%; }
+            75% { opacity: 0.30; background-position: 40% 75%; }
         }
 
         /* 浮动背景光球 - 为液态玻璃增添动态深邃感 */
@@ -433,7 +401,7 @@
                 radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,210,240,0.025) 0%, transparent 60%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
-            animation: shimmer-dark 17s ease-in-out infinite !important;
+            animation: shimmer-dark 18s ease-in-out infinite !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
@@ -443,17 +411,12 @@
                 inset 0 8px 16px -8px rgba(255, 255, 255, 0.04),
                 inset 0 -8px 20px -10px rgba(0, 0, 0, 0.15) !important;
         }
-        /* Dark mode shimmer animation - more subtle for elegant glass effect */
+        /* Dark mode shimmer animation - 更简洁流畅的4步动画 */
         @keyframes shimmer-dark {
-            0% { opacity: 0.24; background-position: 0% 50%; }
-            12% { opacity: 0.30; background-position: 15% 25%; }
-            25% { opacity: 0.36; background-position: 35% 20%; }
-            37% { opacity: 0.42; background-position: 60% 30%; }
-            50% { opacity: 0.36; background-position: 85% 45%; }
-            62% { opacity: 0.30; background-position: 70% 60%; }
-            75% { opacity: 0.26; background-position: 50% 70%; }
-            87% { opacity: 0.24; background-position: 25% 55%; }
-            100% { opacity: 0.24; background-position: 0% 50%; }
+            0%, 100% { opacity: 0.22; background-position: 0% 50%; }
+            25% { opacity: 0.28; background-position: 30% 25%; }
+            50% { opacity: 0.22; background-position: 70% 50%; }
+            75% { opacity: 0.28; background-position: 40% 75%; }
         }
 
         body.dark .card:hover {
