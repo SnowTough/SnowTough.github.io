@@ -244,22 +244,22 @@
             75% { transform: translate(15px, 15px) scale(1.01); }
         }
 
-        /* 深色模式浮动光球 - 更深邃克制的氛围 */
+        /* 深色模式浮动光球 - 更深邃克制的氛围，微妙的蓝紫色调更优雅 */
         body.dark .orb-1 {
-            background: radial-gradient(circle, rgba(180,150,120,0.32) 0%, rgba(150,120,90,0.16) 40%, transparent 70%);
-            opacity: 0.14;
+            background: radial-gradient(circle, rgba(160,145,180,0.26) 0%, rgba(135,120,155,0.12) 40%, transparent 70%);
+            opacity: 0.12;
         }
         body.dark .orb-2 {
-            background: radial-gradient(circle, rgba(170,155,135,0.27) 0%, rgba(145,130,110,0.13) 40%, transparent 70%);
-            opacity: 0.18;
-        }
-        body.dark .orb-3 {
-            background: radial-gradient(circle, rgba(165,140,125,0.22) 0%, rgba(140,115,100,0.10) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(150,145,170,0.22) 0%, rgba(130,125,150,0.10) 40%, transparent 70%);
             opacity: 0.15;
         }
+        body.dark .orb-3 {
+            background: radial-gradient(circle, rgba(145,135,165,0.18) 0%, rgba(125,115,145,0.08) 40%, transparent 70%);
+            opacity: 0.13;
+        }
         body.dark .orb-4 {
-            background: radial-gradient(circle, rgba(160,150,140,0.19) 0%, rgba(140,130,120,0.08) 40%, transparent 70%);
-            opacity: 0.12;
+            background: radial-gradient(circle, rgba(155,150,170,0.16) 0%, rgba(135,130,150,0.07) 40%, transparent 70%);
+            opacity: 0.10;
         }
 
         .card:hover {
@@ -419,12 +419,12 @@
                 linear-gradient(180deg, rgba(255,255,255,0.16) 0%, transparent 24%),
                 /* 中部偏上柔和渐变 */
                 linear-gradient(167deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 16%, transparent 30%),
-                /* 侧向微蓝光泽 - 深色模式下的冷色调点缀 */
-                linear-gradient(147deg, rgba(200,210,240,0.07) 0%, transparent 20%),
+                /* 侧向微蓝光泽 - 深色模式下的冷色调点缀，更优雅 */
+                linear-gradient(147deg, rgba(190,200,230,0.065) 0%, transparent 20%),
                 /* 底部微弱反射 */
                 linear-gradient(202deg, rgba(255,255,255,0.035) 0%, transparent 18%),
                 /* 顶部椭圆光源 - 深色模式更微妙 */
-                radial-gradient(ellipse 120% 50% at 50% -5%, rgba(180,190,220,0.14) 0%, transparent 50%) !important;
+                radial-gradient(ellipse 120% 50% at 50% -5%, rgba(175,185,215,0.12) 0%, transparent 50%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
             animation: shimmer 14s ease-in-out infinite !important;
