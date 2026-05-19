@@ -54,8 +54,8 @@
 
         .card {
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(21px) saturate(195%);
-            -webkit-backdrop-filter: blur(21px) saturate(195%);
+            backdrop-filter: blur(20px) saturate(190%);
+            -webkit-backdrop-filter: blur(20px) saturate(190%);
             border: 1px solid rgba(255, 255, 255, 0.24);
             border-radius: 16px;
             padding: 20px;
@@ -376,8 +376,8 @@
         body.dark .card {
             background: rgba(35, 35, 35, 0.14) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            backdrop-filter: blur(20px) saturate(195%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(195%) !important;
+            backdrop-filter: blur(20px) saturate(190%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
             box-shadow: 
                 0 8px 32px rgba(0, 0, 0, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.06),
@@ -400,35 +400,35 @@
         }
         body.dark .card::before {
             background: linear-gradient(
-                164deg,
-                rgba(255, 255, 255, 0.24) 0%,
-                rgba(255, 255, 255, 0.12) 10%,
-                rgba(255, 255, 255, 0.05) 22%,
-                transparent 40%,
-                transparent 52%,
-                rgba(255, 255, 255, 0.02) 66%,
-                rgba(255, 255, 255, 0.06) 82%,
-                rgba(255, 255, 255, 0.16) 100%
+                166deg,
+                rgba(255, 255, 255, 0.26) 0%,
+                rgba(255, 255, 255, 0.14) 10%,
+                rgba(255, 255, 255, 0.06) 22%,
+                transparent 42%,
+                transparent 54%,
+                rgba(255, 255, 255, 0.025) 68%,
+                rgba(255, 255, 255, 0.07) 84%,
+                rgba(255, 255, 255, 0.18) 100%
             ) !important;
-            opacity: 0.52 !important;
+            opacity: 0.54 !important;
         }
 
         body.dark .card::after {
             background: 
                 /* 顶部强光源 - 深色模式下更微妙 */
-                linear-gradient(180deg, rgba(255,255,255,0.14) 0%, transparent 22%),
+                linear-gradient(180deg, rgba(255,255,255,0.16) 0%, transparent 24%),
                 /* 中部偏上柔和渐变 */
-                linear-gradient(165deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 14%, transparent 28%),
+                linear-gradient(167deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 16%, transparent 30%),
                 /* 侧向微蓝光泽 - 深色模式下的冷色调点缀 */
-                linear-gradient(145deg, rgba(200,210,240,0.06) 0%, transparent 18%),
+                linear-gradient(147deg, rgba(200,210,240,0.07) 0%, transparent 20%),
                 /* 底部微弱反射 */
-                linear-gradient(200deg, rgba(255,255,255,0.03) 0%, transparent 16%),
+                linear-gradient(202deg, rgba(255,255,255,0.035) 0%, transparent 18%),
                 /* 顶部椭圆光源 - 深色模式更微妙 */
-                radial-gradient(ellipse 120% 48% at 50% -6%, rgba(180,190,220,0.12) 0%, transparent 50%) !important;
+                radial-gradient(ellipse 120% 50% at 50% -5%, rgba(180,190,220,0.14) 0%, transparent 50%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
             animation: shimmer 14s ease-in-out infinite !important;
-            opacity: 0.36 !important;
+            opacity: 0.38 !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
@@ -455,7 +455,7 @@
         body.dark .price-item, body.dark .trending-item, body.dark .video-item { background: rgba(0, 0, 0, 0.2) !important; }
         body.dark .forecast-hour { background: rgba(0, 0, 0, 0.25) !important; }
         body.dark .bilibili-stats { border-color: rgba(255, 255, 255, 0.08) !important; }
-        body.dark .modal { background: rgba(28, 30, 38, 0.96) !important; backdrop-filter: blur(20px) saturate(195%) !important; }
+        body.dark .modal { background: rgba(28, 30, 38, 0.96) !important; backdrop-filter: blur(20px) saturate(190%) !important; }
         body.dark .modal-header { border-color: rgba(255, 255, 255, 0.1) !important; }
         body.dark .detail-table th { background: rgba(0, 0, 0, 0.3) !important; }
         body.dark .detail-table tr:hover { background: rgba(0, 0, 0, 0.2) !important; }
