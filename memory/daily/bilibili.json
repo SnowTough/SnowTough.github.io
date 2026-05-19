@@ -1,0 +1,106 @@
+{
+  "updatedAt": "2026-05-19T10:50:24Z",
+  "account": {
+    "level": null,
+    "followers": null,
+    "following": null,
+    "likes": null,
+    "coins": null,
+    "spaceUrl": "https://space.bilibili.com/3706985117649359",
+    "note": "账号页面可访问(Fairy-AI)，但需要登录才能获取详细数据，API请求被限流"
+  },
+  "videos": [
+    {
+      "title": "你家猫会不会认为你是妈妈？",
+      "bvid": "BV1zJ5K69EEw",
+      "url": "https://www.bilibili.com/video/BV1zJ5K69EEw",
+      "views": 255000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "05:43",
+      "category": "动物"
+    },
+    {
+      "title": "算我没出息",
+      "bvid": "BV1ek5y6pESP",
+      "url": "https://www.bilibili.com/video/BV1ek5y6pESP",
+      "views": 573000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "03:30",
+      "category": "娱乐"
+    },
+    {
+      "title": "这下彻底凉快了！机械革命蛟龙16Pro上手体验",
+      "bvid": "BV1wYL365EzA",
+      "url": "https://www.bilibili.com/video/BV1wYL365EzA",
+      "views": 68000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "05:09",
+      "category": "科技数码"
+    },
+    {
+      "title": "用世界上最香的水蟑螂提炼香水！什么味？",
+      "bvid": "BV13g5v6WEGd",
+      "url": "https://www.bilibili.com/video/BV13g5v6WEGd",
+      "views": 463000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "10:03",
+      "category": "知识"
+    },
+    {
+      "title": "夏天好用的小玩意！嗯？有什么奇怪的东西混进来了？",
+      "bvid": "BV1Ev5Y6bEcq",
+      "url": "https://www.bilibili.com/video/BV1Ev5Y6bEcq",
+      "views": 391000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "28:52",
+      "category": "知识"
+    },
+    {
+      "title": "【aespa】#menow",
+      "bvid": "BV1ahLg6dET3",
+      "url": "https://www.bilibili.com/video/BV1ahLg6dET3",
+      "views": 343000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "00:12",
+      "category": "音乐"
+    },
+    {
+      "title": "感觉脑袋被掏空，还能康复吗",
+      "bvid": "BV13p5u6JEhz",
+      "url": "https://www.bilibili.com/video/BV13p5u6JEhz",
+      "views": 737000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "09:49",
+      "category": "知识"
+    },
+    {
+      "title": "世界只有一个墨脱，而墨脱却拥有整个世界",
+      "bvid": "BV1Be5G6BEFt",
+      "url": "https://www.bilibili.com/video/BV1Be5G6BEFt",
+      "views": 373000,
+      "likes": null,
+      "coins": null,
+      "favorites": null,
+      "duration": "06:05",
+      "category": "户外潮流"
+    }
+  ],
+  "exploreNote": {
+    "browserAvailable": false,
+    "note": "浏览器工具超时，无法进行点赞等交互操作。使用web_fetch获取了首页推荐视频数据。账号安全页面需要登录。Fairy-AI个人主页确认存在但数据为空(可能未发布内容)。"
+  }
+}

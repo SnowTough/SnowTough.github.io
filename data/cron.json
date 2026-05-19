@@ -1,0 +1,215 @@
+{
+  "updatedAt": 1778843061548,
+  "updatedAtISO": "2026-05-15T11:04:21.548Z",
+  "jobs": [
+    {
+      "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
+      "name": "status-page-sync",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "state": {
+        "lastRunAtMs": 1778839441483,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 25043,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778843041463
+      }
+    },
+    {
+      "id": "07d14945-84d5-461c-97c4-72d28fc03731",
+      "name": "B站探索",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "state": {
+        "lastRunAtMs": 1778839477434,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 94642,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778843077428
+      }
+    },
+    {
+      "id": "e1551bfb-7b24-4f87-a8b6-7b5cc1ccfa09",
+      "name": "简报页面自进化",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1778503432662
+      },
+      "state": {
+        "lastRunAtMs": 1778842164670,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 163404,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778843964670
+      }
+    },
+    {
+      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
+      "name": "系统健康巡检",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1560000,
+        "anchorMs": 1778571094335
+      },
+      "state": {
+        "lastRunAtMs": 1778842869683,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 65409,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778844429683
+      }
+    },
+    {
+      "id": "91dc8ac5-ec3b-4d15-8981-88e53ff4e216",
+      "name": "B站日报",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "state": {
+        "lastRunAtMs": 1778758204251,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 23222,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778844600000
+      }
+    },
+    {
+      "id": "43af8877-a0f9-4c49-9ea6-5673bd85ed7e",
+      "name": "Memory Dreaming Promotion",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *"
+      },
+      "state": {
+        "lastRunAtMs": 1778785200023,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 10283,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778871600000
+      }
+    },
+    {
+      "id": "786abfd4-f7fc-4645-b7af-360ddf27bcb5",
+      "name": "weather-rain-alert",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "state": {
+        "lastRunAtMs": 1778799600022,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 55437,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778886000000
+      }
+    },
+    {
+      "id": "c43cc749-d7cf-4aec-aa21-b139d843c7b6",
+      "name": "github-trending-daily",
+      "enabled": false,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "state": {
+        "lastRunAtMs": 1778745638877,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 313027,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "cron: job interrupted by gateway restart"
+      }
+    },
+    {
+      "id": "89149bfa-9775-4c48-9753-5bf9061b155b",
+      "name": "llm-pricing-update",
+      "enabled": false,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "state": {
+        "lastRunAtMs": 1778745638877,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 313029,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "cron: job interrupted by gateway restart"
+      }
+    },
+    {
+      "id": "c9fe3c56-d398-44e8-a8d1-38f796c8a1ac",
+      "name": "auto-sync-daily",
+      "enabled": false,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1778297728936
+      },
+      "state": {
+        "lastRunAtMs": 1778498487508,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 30108,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 32,
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    {
+      "id": "1c1d8602-5b33-4a0d-8ad5-d462f211eae4",
+      "name": "B站自进化探索",
+      "enabled": false,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 10800000,
+        "anchorMs": 1778557877865
+      },
+      "state": {
+        "lastRunAtMs": 1778765753164,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 250772,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📝 Edit: in memory/bilibili-evolve.json failed"
+      }
+    }
+  ]
+}

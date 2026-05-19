@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-05-19T11:13:00+08:00",
+  "checkNumber": 48,
+  "summary": "系统完全健康",
+  "totalJobs": 7,
+  "healthyJobs": 7,
+  "errorJobs": 0,
+  "autoFixes": 0,
+  "notifications": 0,
+  "jobs": [
+    {
+      "id": "0be390b8-9bef-4c24-a7bf-58d4e9f439a7",
+      "name": "系统健康巡检",
+      "status": "running",
+      "lastRun": "<1m ago",
+      "notes": "每26分钟执行"
+    },
+    {
+      "id": "e1551bfb-7b24-4f87-a8b6-7b5cc1ccfa09",
+      "name": "简报页面自进化",
+      "status": "ok",
+      "lastRun": "11m ago",
+      "notes": "每24分钟优化"
+    },
+    {
+      "id": "f3960934-3865-4281-9f15-f1947b0cbde4",
+      "name": "status-page-sync",
+      "status": "ok",
+      "lastRun": "9m ago",
+      "notes": "每小时同步"
+    },
+    {
+      "id": "07d14945-84d5-461c-97c4-72d28fc03731",
+      "name": "B站探索",
+      "status": "ok",
+      "lastRun": "24m ago",
+      "notes": "每2小时探索"
+    },
+    {
+      "id": "91dc8ac5-ec3b-4d15-8981-88e53ff4e216",
+      "name": "B站日报",
+      "status": "ok",
+      "lastRun": "16h ago",
+      "notes": "每天 19:30"
+    },
+    {
+      "id": "43af8877-a0f9-4c49-9ea6-5673bd85ed7e",
+      "name": "Memory Dreaming Promo",
+      "status": "ok",
+      "lastRun": "8h ago",
+      "notes": "每天 3:00"
+    },
+    {
+      "id": "786abfd4-f7fc-4645-b7af-360ddf27bcb5",
+      "name": "weather-rain-alert",
+      "status": "ok",
+      "lastRun": "4h ago",
+      "notes": "每天 7:30"
+    }
+  ],
+  "checks": {
+    "failureHandling3": { "status": "pass", "description": "无任务达到3次连续错误阈值" },
+    "failureHandling5": { "status": "pass", "description": "无任务达到5次连续错误阈值" },
+    "failureHandling8": { "status": "pass", "description": "无任务达到8次禁用阈值" },
+    "antiIdle": { "status": "pass", "description": "所有任务间隔合理" },
+    "delivery": { "status": "pass", "description": "所有任务target正常" },
+    "filePermissions": { "status": "pass", "description": "无文件权限问题" }
+  }
+}
