@@ -272,12 +272,20 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.5),
                 /* 悬停时增强边缘高光 - 更明显的玻璃质感 */
                 inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-                inset 0 2px 8px rgba(255, 255, 255, 0.1);
+                inset 0 2px 8px rgba(255, 255, 255, 0.1),
+                /* 悬停时内部柔和高光 - 增强玻璃通透感 */
+                inset 0 0 30px rgba(255, 255, 255, 0.08),
+                inset 0 -8px 24px -12px rgba(0, 0, 0, 0.03);
         }
 
         .card:hover::before {
             opacity: 0.7;
             animation-duration: 10s;
+        }
+
+        /* 悬停时增强动态光泽 - 让玻璃更有生命力 */
+        .card:hover::after {
+            opacity: 0.38 !important;
         }
 
         .card-header {
@@ -457,7 +465,13 @@
                 inset -2px -2px 4px rgba(0, 0, 0, 0.2),
                 /* 深色模式悬停时增强边缘高光 - 更明显的玻璃质感 */
                 inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-                inset 0 2px 10px rgba(255, 255, 255, 0.05) !important;
+                inset 0 2px 10px rgba(255, 255, 255, 0.05) !important,
+                /* 深色模式悬停时内部柔和高光 - 增强玻璃通透感 */
+                inset 0 0 40px rgba(255, 255, 255, 0.025),
+                inset 0 -12px 30px -14px rgba(0, 0, 0, 0.25) !important;
+        }
+        body.dark .card:hover::after {
+            opacity: 0.32 !important;
         }
         body.dark .card-header { border-color: rgba(255, 255, 255, 0.08) !important; }
         body.dark .weather-forecast { border-color: rgba(255, 255, 255, 0.08) !important; }
