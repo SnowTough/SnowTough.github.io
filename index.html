@@ -355,7 +355,7 @@
             z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.25s ease; padding: 20px;
         }
         .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal { background: var(--card-bg); border-radius: 12px; max-width: 800px; width: 100%; max-height: 85vh; overflow: hidden; display: flex; flex-direction: column; transform: scale(0.95); transition: transform 0.25s ease; }
+        .modal { background: var(--card-bg); border-radius: 12px; max-width: 800px; width: 100%; max-height: 85vh; overflow: hidden; display: flex; flex-direction: column; transform: scale(0.95); transition: transform 0.25s ease; filter: url(#glass-edge); }
         .modal-overlay.active .modal { transform: scale(1); }
         .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--border); }
         .modal-title { font-size: 18px; font-weight: 600; }
@@ -479,7 +479,7 @@
         body.dark .price-item, body.dark .trending-item, body.dark .video-item { background: rgba(0, 0, 0, 0.2) !important; }
         body.dark .forecast-hour { background: rgba(0, 0, 0, 0.25) !important; }
         body.dark .bilibili-stats { border-color: rgba(255, 255, 255, 0.08) !important; }
-        body.dark .modal { background: rgba(28, 30, 38, 0.96) !important; backdrop-filter: blur(20px) saturate(190%) !important; }
+        body.dark .modal { background: rgba(28, 30, 38, 0.96) !important; backdrop-filter: blur(20px) saturate(190%) !important; filter: url(#glass-edge-dark); }
         body.dark .modal-header { border-color: rgba(255, 255, 255, 0.1) !important; }
         body.dark .detail-table th { background: rgba(0, 0, 0, 0.3) !important; }
         body.dark .detail-table tr:hover { background: rgba(0, 0, 0, 0.2) !important; }
