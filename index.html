@@ -117,23 +117,23 @@
             bottom: 0;
             background: 
                 /* 顶部强光源 - 最亮的第一层高光 */
-                linear-gradient(180deg, rgba(255,255,255,0.32) 0%, transparent 24%),
+                linear-gradient(180deg, rgba(255,255,255,0.30) 0%, transparent 24%),
                 /* 中部偏上柔和渐变 - 第二层光泽 */
-                linear-gradient(165deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 16%, transparent 32%),
+                linear-gradient(165deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.07) 16%, transparent 32%),
                 /* 侧向暖色光泽 - 增加色彩层次 */
-                linear-gradient(145deg, rgba(255,248,240,0.12) 0%, transparent 20%),
+                linear-gradient(145deg, rgba(255,248,240,0.11) 0%, transparent 20%),
                 /* 底部微弱反射 - 真实玻璃的底部散射 */
-                linear-gradient(200deg, rgba(255,255,255,0.06) 0%, transparent 18%),
+                linear-gradient(200deg, rgba(255,255,255,0.05) 0%, transparent 18%),
                 /* 顶部椭圆光源 - 模拟顶部强光源聚焦 */
-                radial-gradient(ellipse 130% 60% at 50% -6%, rgba(250,250,252,0.28) 0%, transparent 50%),
+                radial-gradient(ellipse 130% 60% at 50% -6%, rgba(250,250,252,0.26) 0%, transparent 50%),
                 /* 新增：中心微妙内发光 - 模拟光线困在玻璃内部的效果 */
-                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 60%);
+                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
             background-size: 200% 200%;
             background-position: 0% 50%;
             pointer-events: none;
             border-radius: 16px;
-            opacity: 0.24;
-            animation: shimmer 18s ease-in-out infinite;
+            opacity: 0.22;
+            animation: shimmer 20s ease-in-out infinite;
             box-shadow: 
                 inset 0 0 50px rgba(255, 255, 255, 0.03),
                 inset 0 -15px 30px -10px rgba(255, 255, 255, 0.015),
@@ -150,10 +150,10 @@
         }
 
         @keyframes shimmer {
-            0%, 100% { opacity: 0.24; background-position: 0% 50%; }
-            25% { opacity: 0.30; background-position: 30% 25%; }
-            50% { opacity: 0.24; background-position: 70% 50%; }
-            75% { opacity: 0.30; background-position: 40% 75%; }
+            0%, 100% { opacity: 0.22; background-position: 0% 50%; }
+            25% { opacity: 0.26; background-position: 30% 25%; }
+            50% { opacity: 0.22; background-position: 70% 50%; }
+            75% { opacity: 0.26; background-position: 40% 75%; }
         }
 
         /* 浮动背景光球 - 为液态玻璃增添动态深邃感 */
@@ -253,7 +253,7 @@
 
         /* 悬停时增强动态光泽 - 让玻璃更有生命力 */
         .card:hover::after {
-            opacity: 0.38 !important;
+            opacity: 0.34 !important;
         }
 
         .card-header {
@@ -388,20 +388,20 @@
         body.dark .card::after {
             background: 
                 /* 顶部强光源 - 深色模式下更微妙 */
-                linear-gradient(180deg, rgba(255,255,255,0.16) 0%, transparent 24%),
+                linear-gradient(180deg, rgba(255,255,255,0.14) 0%, transparent 24%),
                 /* 中部偏上柔和渐变 */
-                linear-gradient(167deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 16%, transparent 30%),
+                linear-gradient(167deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 16%, transparent 30%),
                 /* 侧向微蓝光泽 - 深色模式下的冷色调点缀，更优雅 */
-                linear-gradient(147deg, rgba(190,200,230,0.065) 0%, transparent 20%),
+                linear-gradient(147deg, rgba(190,200,230,0.055) 0%, transparent 20%),
                 /* 底部微弱反射 */
-                linear-gradient(202deg, rgba(255,255,255,0.035) 0%, transparent 18%),
+                linear-gradient(202deg, rgba(255,255,255,0.03) 0%, transparent 18%),
                 /* 顶部椭圆光源 - 深色模式更微妙 */
-                radial-gradient(ellipse 130% 55% at 50% -6%, rgba(175,185,215,0.14) 0%, transparent 50%),
+                radial-gradient(ellipse 130% 55% at 50% -6%, rgba(175,185,215,0.12) 0%, transparent 50%),
                 /* 新增：中心微妙内发光 - 深色模式下更微妙的光线困在玻璃内部效果 */
-                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,210,240,0.025) 0%, transparent 60%) !important;
+                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,210,240,0.02) 0%, transparent 60%) !important;
             background-size: 200% 200% !important;
             background-position: 0% 50% !important;
-            animation: shimmer-dark 18s ease-in-out infinite !important;
+            animation: shimmer-dark 20s ease-in-out infinite !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
@@ -413,10 +413,10 @@
         }
         /* Dark mode shimmer animation - 更简洁流畅的4步动画 */
         @keyframes shimmer-dark {
-            0%, 100% { opacity: 0.22; background-position: 0% 50%; }
-            25% { opacity: 0.28; background-position: 30% 25%; }
-            50% { opacity: 0.22; background-position: 70% 50%; }
-            75% { opacity: 0.28; background-position: 40% 75%; }
+            0%, 100% { opacity: 0.20; background-position: 0% 50%; }
+            25% { opacity: 0.24; background-position: 30% 25%; }
+            50% { opacity: 0.20; background-position: 70% 50%; }
+            75% { opacity: 0.24; background-position: 40% 75%; }
         }
 
         body.dark .card:hover {
@@ -434,7 +434,7 @@
                 inset 0 -12px 30px -14px rgba(0, 0, 0, 0.25) !important;
         }
         body.dark .card:hover::after {
-            opacity: 0.32 !important;
+            opacity: 0.28 !important;
         }
         body.dark .card-header { border-color: rgba(255, 255, 255, 0.08) !important; }
         body.dark .weather-forecast { border-color: rgba(255, 255, 255, 0.08) !important; }
