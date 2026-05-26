@@ -178,6 +178,7 @@
             top: -150px;
             left: -100px;
             animation-delay: 0s;
+            animation-duration: 25s;
         }
         .orb-2 {
             width: 400px;
@@ -185,8 +186,8 @@
             background: radial-gradient(circle, rgba(255,240,220,0.5) 0%, rgba(255,230,200,0.3) 40%, transparent 70%);
             top: 30%;
             right: -80px;
-            animation-delay: -7s;
-            animation-duration: 24s;
+            animation-delay: -8s;
+            animation-duration: 30s;
         }
         .orb-3 {
             width: 350px;
@@ -195,7 +196,7 @@
             bottom: -100px;
             left: 30%;
             animation-delay: -14s;
-            animation-duration: 22s;
+            animation-duration: 28s;
         }
         .orb-4 {
             width: 280px;
@@ -204,14 +205,15 @@
             bottom: 20%;
             right: 20%;
             animation-delay: -5s;
-            animation-duration: 26s;
+            animation-duration: 35s;
         }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(25px, -15px) scale(1.03); }
-            50% { transform: translate(-15px, 20px) scale(0.97); }
-            75% { transform: translate(15px, 15px) scale(1.01); }
+            20% { transform: translate(35px, -25px) scale(1.05); }
+            40% { transform: translate(-15px, -30px) scale(0.96); }
+            60% { transform: translate(-30px, 15px) scale(1.03); }
+            80% { transform: translate(25px, 30px) scale(0.98); }
         }
 
         /* 深色模式浮动光球 - 更深邃克制的氛围，微妙的蓝紫色调更优雅 */
