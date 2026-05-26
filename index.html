@@ -133,7 +133,7 @@
             pointer-events: none;
             border-radius: 16px;
             opacity: 0.22;
-            animation: shimmer 20s ease-in-out infinite;
+            animation: shimmer 18s ease-in-out infinite;
             box-shadow: 
                 inset 0 0 50px rgba(255, 255, 255, 0.03),
                 inset 0 -15px 30px -10px rgba(255, 255, 255, 0.015),
@@ -150,10 +150,10 @@
         }
 
         @keyframes shimmer {
-            0%, 100% { opacity: 0.22; background-position: 0% 50%; }
-            25% { opacity: 0.26; background-position: 30% 25%; }
-            50% { opacity: 0.22; background-position: 70% 50%; }
-            75% { opacity: 0.26; background-position: 40% 75%; }
+            0%, 100% { opacity: 0.24; background-position: 0% 50%; }
+            25% { opacity: 0.30; background-position: 30% 25%; }
+            50% { opacity: 0.24; background-position: 70% 50%; }
+            75% { opacity: 0.30; background-position: 40% 75%; }
         }
 
         /* 浮动背景光球 - 为液态玻璃增添动态深邃感 */
@@ -403,7 +403,7 @@
                 radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,210,240,0.035) 0%, transparent 60%) !important;
             background-size: 280% 280% !important;
             background-position: 0% 50% !important;
-            animation: shimmer-dark 20s ease-in-out infinite !important;
+            animation: shimmer-dark 18s ease-in-out infinite !important;
             box-shadow: 
                 inset 0 0 80px rgba(255, 255, 255, 0.018),
                 inset 0 0 140px rgba(255, 255, 255, 0.008),
@@ -415,10 +415,10 @@
         }
         /* Dark mode shimmer animation - 更简洁流畅的4步动画 */
         @keyframes shimmer-dark {
-            0%, 100% { opacity: 0.20; background-position: 0% 50%; }
-            25% { opacity: 0.24; background-position: 30% 25%; }
-            50% { opacity: 0.20; background-position: 70% 50%; }
-            75% { opacity: 0.24; background-position: 40% 75%; }
+            0%, 100% { opacity: 0.22; background-position: 0% 50%; }
+            25% { opacity: 0.28; background-position: 30% 25%; }
+            50% { opacity: 0.22; background-position: 70% 50%; }
+            75% { opacity: 0.28; background-position: 40% 75%; }
         }
 
         body.dark .card:hover {
